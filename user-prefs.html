@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+
+<body onload="setUserPrefs()">
+    <h1>Prefs page</h1>
+
+    <main>
+        <form action="">
+            <p>What is your name? <input type="text" class="name"></p>
+            <p>Pick A Background Color: <input type="color" class="bgc" /></p>
+            <p>Pick A Text Color: <input type="color" class="txt" /></p>
+            <p>Date Of Birth: <input type="date" class="date" /></p>
+            <p>Time of Birth: <input type="time" class="time" /></p>
+            <p>Email: <input type="email" class="email" required /></p>
+            <p><input type="range" id="age" name="age" min="18" max="120" value="26" onchange="showAge(this.value);" />
+                <span id="sAge">18</span></p>
+            <button type="button" onclick="onSubmit()">Submit</button>
+        </form>
+
+        <div class="forecast"></div>
+    </main>
+
+
+
+    <script src="js/utilService.js"></script>
+    <script src="js/userPrefService.js"></script>
+    <script src="js/prefs.js"></script>
+</body>
+
+</html>
