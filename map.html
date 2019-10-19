@@ -1,20 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <h1>Map Page!</h1>
+
+<body onload="init()">
+  <main>
+    <div id="map"></div>
+    <button onclick="getUserPos()"><img class="my-location"
+        src="https://cdn3.iconfinder.com/data/icons/mobile-friendly-ui/100/crosshair-512.png"></button>
+      <ul class="locs"></ul>
+  </main>
+  
 
 
 
-
-
-    <script src="js/placeService.js"></script>
-    <script src="js/map.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbhn96qgXx4hd50UPQZexxY5UqPA8jBuQ
+    &callback=initMap">
+    </script>
+  <script src="js/utilService.js"></script>
+  <script src="js/placeService.js"></script>
+  <script src="js/map.js"></script>
 </body>
+
 </html>

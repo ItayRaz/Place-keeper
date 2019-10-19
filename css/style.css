@@ -1,0 +1,9 @@
+#map {
+    height: 400px;
+    width: 100%;  
+   }
+
+.my-location {
+    height: 40px;
+    width: 45px;
+}
