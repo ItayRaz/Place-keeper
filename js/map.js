@@ -23,9 +23,9 @@ function initMap() {
             lng: event.latLng.lng()
         }
 
+        var marker = new google.maps.Marker({ position: pos, map: gMap });
         marker.title = prompt('name:')
         if (!marker.title) return;
-        var marker = new google.maps.Marker({ position: pos, map: gMap });
         marker.getTitle();
         addLoc(pos.lat, pos.lng, marker.title)
         gMap.setCenter(pos);
@@ -56,6 +56,7 @@ function onLoc(locId) {
 }
 
 function onTrash(id) {
+    event.stopPropagation();
     removeLoc(id);
     renderLocs();
 }

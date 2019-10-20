@@ -60,9 +60,9 @@ function goToLoc(loc) {
             lng: event.latLng.lng()
         }
 
+        var marker = new google.maps.Marker({ position: pos, map: gMap });
         marker.title = prompt('name:');
         if (!marker.title) return;
-        var marker = new google.maps.Marker({ position: pos, map: gMap });
         marker.getTitle();
         addLoc(pos.lat, pos.lng, marker.title)
         gMap.setCenter(pos);
