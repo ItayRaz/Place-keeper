@@ -24,7 +24,7 @@ function initMap() {
         }
 
         var marker = new google.maps.Marker({ position: pos, map: gMap });
-        marker.title = prompt('name:')
+        marker.title = prompt('name:');
         if (!marker.title) return;
         marker.getTitle();
         addLoc(pos.lat, pos.lng, marker.title)
