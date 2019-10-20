@@ -54,6 +54,19 @@ function goToLoc(loc) {
         center: pos,
         zoom: 12
     });
+    gMap.addListener('click', function (event) {
+        var pos = {
+            lat: event.latLng.lat(),
+            lng: event.latLng.lng()
+        }
+
+        marker.title = prompt('name:');
+        if (!marker.title) return;
+        var marker = new google.maps.Marker({ position: pos, map: gMap });
+        marker.getTitle();
+        addLoc(pos.lat, pos.lng, marker.title)
+        gMap.setCenter(pos);
+    })
     gMarker = new google.maps.Marker({ position: pos, map: gMap })
 }
 
