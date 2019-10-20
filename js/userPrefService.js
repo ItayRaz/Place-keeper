@@ -15,11 +15,3 @@ function createUserPref(name, bgc, txtColor) {
     gUser = loadFromStorage(PREF_KEY);
     return user;
 }
-
-function setUserPrefs () {
-    if (!loadFromStorage(PREF_KEY)) return;
-    var user = loadFromStorage(PREF_KEY)    
-    document.body.style.backgroundColor = user.bgc;
-    document.body.style.color = user.txtColor;
-    document.querySelector('.forecast').innerText = user.forecast;
-}

@@ -8,7 +8,7 @@ let gLocs = [];
 
 function createLocs() {
     var locs = loadFromStorage(LOC_KEY);
-    if (!locs) locs = [createLoc(29.55805, 34.94821, 'Eilat')]
+    if (!locs || locs.length === 0) locs = [createLoc(29.55805, 34.94821, 'Eilat')]
     gLocs = locs;
     gNextId = gLocs[0].id;
     saveToStorage(LOC_KEY, gLocs);
@@ -57,9 +57,26 @@ function goToLoc(loc) {
     gMarker = new google.maps.Marker({ position: pos, map: gMap })
 }
 
+function removeLoc(id) {
+    var locIdx = findLocIndex(id);
+    gLocs.splice(locIdx, 1);
+    saveToStorage(LOC_KEY, gLocs);
+}
+
+
+
+
+
 function findLocById (id) {
     var loc = gLocs.find((loc) => {
         return loc.id === id;
     })
     return loc
+}
+
+function findLocIndex (id) {
+    var loc = gLocs.findIndex((loc) => {
+        return loc.id === id;
+    })
+    return loc;
 }

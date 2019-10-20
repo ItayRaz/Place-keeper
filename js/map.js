@@ -44,7 +44,7 @@ function renderLocs() {
     let locs = getgLocs();
     let locsHTML = locs.map((loc) => {
 
-        return `<li onclick="onLoc(${loc.id})">${loc.name}</li>`
+        return `<li onclick="onLoc(${loc.id})">${loc.name} <i class="far fa-trash-alt" onclick="onTrash(${loc.id})"></i></li>`
     })
     elLocsList.innerHTML = locsHTML.join('');
 }
@@ -52,4 +52,9 @@ function renderLocs() {
 function onLoc(locId) {
     var loc = findLocById(locId)
     goToLoc(loc);
+}
+
+function onTrash(id) {
+    removeLoc(id);
+    renderLocs();
 }
